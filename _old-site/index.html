@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIBRA POP — Soda with a little more substance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="logo">
+      <img src="logo_white.png" class="logo-white" alt="FibraPOP">
+      <img src="logo_pink.png"  class="logo-pink"  alt="FibraPOP">
+    </div>
+    <div class="nav-links">
+      <a href="#inside">Inside</a>
+      <a href="#flavors">Flavors</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">Find your fizz</button>
+  </nav>
+
+  <!-- SECTION 1: HERO -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Sparkling · Fruity · Fibrous</div>
+        <h1 class="hero-headline">
+          <div class="line"><span class="word">Not your</span></div>
+          <div class="line"><span class="word">average</span></div>
+          <div class="line"><span class="word italic-word">soda.</span></div>
+        </h1>
+        <p class="hero-body">Fruity, fizzy, and full of fiber.<br>A sparkling drink with a little more substance.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('flavors').scrollIntoView({behavior:'smooth'})">Find your fizz ↓</button>
+          <div class="fiber-badge">5g fiber per can</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHAT'S INSIDE -->
+  <section id="inside">
+    <div class="inside-wrapper">
+      <div class="inside-left">
+        <svg class="inside-blob" viewBox="0 0 480 740" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 220,18 C 330,-18 492,78 478,228 C 464,378 348,398 390,528 C 432,658 388,748 220,742 C 52,736 4,640 36,496 C 68,352 -18,318 8,178 C 34,38 110,54 220,18 Z"/>
+          <path d="M 310,60 C 390,30 470,130 450,260 C 430,390 320,380 340,490 C 360,600 330,680 220,675" stroke-width="1.5" stroke="#F5F0E8" fill="none" opacity="0.4"/>
+        </svg>
+        <div class="inside-cans-wrap" id="insideCans"></div>
+      </div>
+      <div class="inside-right">
+        <div class="inside-header">
+          <h2 class="section-title">What's<br>inside?</h2>
+          <p class="section-sub">More than just bubbles.</p>
+        </div>
+        <div class="ingredient" data-step="0">
+          <div class="ing-num">01</div>
+          <div class="ing-body">
+            <h3>Sparkling Water</h3>
+            <p>Pure, crisp, naturally carbonated. The base of every pop.</p>
+          </div>
+          <!--<div class="ing-dot water-dot"></div>-->
+        </div>
+        <div class="ingredient" data-step="1">
+          <div class="ing-num">02</div>
+          <div class="ing-body">
+            <h3>Real Fruit Flavor</h3>
+            <p>No artificial shortcuts. Just real fruit, real bold taste.</p>
+          </div>
+          <!--<div class="ing-dot fruit-dot"></div>-->
+        </div>
+        <div class="ingredient" data-step="2">
+          <div class="ing-num">03</div>
+          <div class="ing-body">
+            <h3>5g Fiber Blend</h3>
+            <p>The substance behind the soda. You taste the fizz.</p>
+            <!--<div class="fiber-progress"><div class="fiber-fill" id="fiberFill"></div></div>-->
+          </div>
+          <!--<div class="ing-dot fiber-dot"></div>-->
+        </div>
+        <div class="ingredient" data-step="3">
+          <div class="ing-num">04</div>
+          <div class="ing-body">
+            <h3>No Boring Vibes</h3>
+            <p>Five flavors. Five moods. Never a dull sip.</p>
+          </div>
+          <!--<div class="ing-dot vibes-dot"></div>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: FLAVOR JOURNEY -->
+  <section id="flavors">
+    <div class="flavors-sticky" id="flavorsSticky">
+      <div class="flavor-bg" id="flavorBg"></div>
+      <canvas class="flavor-canvas" id="flavorCanvas"></canvas>
+
+      <div class="flavor-layout">
+        <div class="flavor-can-side" id="flavorCanSide"></div>
+        <div class="flavor-info-side">
+          <div class="flavor-text" id="flavorText"></div>
+          <div class="flavor-chips" id="flavorChips"></div>
+          <div class="flavor-stat">
+            <span class="flavor-fiber-num">5g</span>
+            <span class="flavor-fiber-lbl">fiber per can</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flavor-nav" id="flavorNav"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: GALLERY -->
+  <section id="gallery">
+    <div class="gallery-header">
+      <h2>Pick your pop.</h2>
+      <p>Five flavors. One fizz. Yours to choose.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-panel" id="galleryPanel">
+      <div class="panel-inner" id="panelInner"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CTA -->
+  <section id="cta">
+    <canvas class="cta-canvas" id="ctaCanvas"></canvas>
+    <div class="cta-content">
+      <div class="cta-eyebrow">FIBRA POP</div>
+      <h2 class="cta-headline">Ready<br>to pop?</h2>
+      <p class="cta-body">Soda with a little more substance.<br>Choose your color. Choose your flavor.</p>
+      <button class="btn-primary btn-large btn-dark" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+        Explore all flavors
+      </button>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

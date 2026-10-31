@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibra Pop — Soda with a little more substance</title>
+  <meta name="description" content="Fibra Pop: fruity sparkling soda with 5 g of prebiotic fiber in every can. Six flavors, nothing artificial.">
+  <meta name="theme-color" content="#643132">
+  <link rel="icon" href="assets/logo/logo-ink.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Montserrat:wght@400;500;600;700&family=Pinyon+Script&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ LOADER: a cross-stitch curtain ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-grid" id="loaderGrid"></div>
+    <div class="loader-mark">
+      <img src="assets/logo/logo-cream.png" alt="">
+      <span class="loader-count" id="loaderCount">000</span>
+    </div>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo" aria-label="Fibra Pop — home">
+      <img src="assets/logo/logo-ink.png" alt="Fibra Pop">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#flavors" data-scramble>Flavors</a>
+      <a href="#fiber" data-scramble>Fiber</a>
+      <a href="#stitch" data-scramble>Play</a>
+      <a href="#box" data-scramble>Shop</a>
+    </nav>
+    <a href="#box" class="nav-box" aria-label="Your box">
+      <span class="nav-box-label">Box</span>
+      <span class="nav-box-pips" id="navPips" aria-hidden="true"></span>
+      <span class="nav-box-count" id="navCount">0/6</span>
+    </a>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-tint" id="heroTint"></div>
+      <canvas class="trail" id="trail" aria-hidden="true"></canvas>
+      <img class="hero-fruit" id="heroFruit" src="assets/fruits/cherry-vanilla.webp" alt="">
+      <img class="hero-bot" id="heroBot" src="assets/botanicals/cherry-vanilla.webp" alt="">
+
+
+      <h1 class="hero-title">
+        <span class="hero-line hero-line--px" data-split>Soda with a little</span>
+        <span class="hero-line hero-line--script" data-split>more substance</span>
+      </h1>
+
+      <div class="hero-stage" id="heroStage">
+        <button class="hero-can-btn" id="heroCanBtn" aria-label="Next flavor">
+          <canvas class="hero-can" id="heroCan" width="400" height="700"></canvas>
+        </button>
+        <span class="hero-hint px" aria-hidden="true">click the can ↻</span>
+      </div>
+
+      <div class="hero-switch" role="tablist" aria-label="Choose a flavor">
+        <div class="hero-swatches" id="heroSwatches"></div>
+        <p class="hero-flavor" aria-live="polite">
+          <span class="hero-flavor-fruit px" id="heroFruitName">Cherry</span>
+          <span class="hero-flavor-bot script" id="heroBotName">Vanilla</span>
+        </p>
+      </div>
+
+      <a href="#flavors" class="hero-scroll px">scroll <span>↓</span></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-row" id="marqueeA"></div>
+      <div class="marquee-row marquee-row--rev" id="marqueeB"></div>
+    </div>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="fiber">
+      <p class="eyebrow px">[ 01 ] Why fiber</p>
+      <p class="manifesto-text" id="manifesto">
+        Your body asks for 30 grams of fiber a day. Most of us get about half.
+        So we put five grams into every can, and the drink you were reaching for anyway
+        finally gives something back.
+      </p>
+
+      <div class="facts">
+        <div class="fact">
+          <span class="fact-num px" data-count="5">0</span><span class="fact-unit script">grams</span>
+          <p>of prebiotic fiber in every can. About as much as two slices of wholegrain bread.</p>
+        </div>
+        <div class="fact">
+          <span class="fact-num px" data-count="30">0</span><span class="fact-unit script">a day</span>
+          <p>grams of fiber: the recommended daily intake for adults.<sup>1</sup></p>
+        </div>
+        <div class="fact">
+          <span class="fact-num px" data-count="0">0</span><span class="fact-unit script">artificial</span>
+          <p>No artificial sweeteners, colors or preservatives.</p>
+        </div>
+      </div>
+
+      <div class="benefits">
+        <article class="benefit">
+          <span class="benefit-num px">01</span>
+          <h3><span class="px">Happy</span> <span class="script">gut</span></h3>
+          <p>Prebiotic fiber feeds the good bacteria in your gut, the ones that keep digestion running smoothly.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-num px">02</span>
+          <h3><span class="px">Fuller</span> <span class="script">for longer</span></h3>
+          <p>Fiber slows digestion down, so you stay satisfied between meals instead of hunting for snacks.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-num px">03</span>
+          <h3><span class="px">Steady</span> <span class="script">energy</span></h3>
+          <p>It slows how fast sugar reaches your blood. Fewer spikes, fewer afternoon crashes.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit-num px">04</span>
+          <h3><span class="px">Long</span> <span class="script">term</span></h3>
+          <p>People who eat the most fiber have a 15–30% lower risk of heart disease, stroke, type 2 diabetes and colorectal cancer.<sup>2</sup></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FIBER GAP CALCULATOR ============ -->
+    <section class="gap" id="gap">
+      <div class="gap-head">
+        <p class="eyebrow px">[ 02 ] Your day</p>
+        <h2 class="section-title"><span class="px">Your inner</span> <span class="script">garden</span></h2>
+        <p class="gap-lead">Inside you lives a quiet garden: trillions of tiny organisms that keep you well. Fiber is what they eat. Tell us about your day, and see how well it was fed.</p>
+      </div>
+
+      <div class="gap-layout">
+        <div>
+          <div class="gap-foods" id="gapFoods" role="group" aria-label="Foods you ate today"></div>
+          <div class="gap-cans">
+            <span class="px">+ Fibra Pop <small>5 g each</small></span>
+            <div class="stepper">
+              <button id="gapCanDec" aria-label="Remove a can">−</button>
+              <output id="gapCanQty">0</output>
+              <button id="gapCanInc" aria-label="Add a can">+</button>
+            </div>
+          </div>
+          <div class="gap-tray" id="gapTray" aria-hidden="true"></div>
+        </div>
+
+        <div class="gap-meter">
+          <p class="gap-total"><span class="px" id="gapTotal">0</span><span class="px gap-of">/ 30 g</span></p>
+          <div class="gap-grid" id="gapGrid" aria-hidden="true"></div>
+          <p class="gap-msg" id="gapMsg" aria-live="polite"></p>
+          <a href="#box" class="btn btn--flavor">Feed your garden →</a>
+        </div>
+      </div>
+
+      <p class="sources">
+        <sup>1</sup> German Nutrition Society (DGE): 30 g of fiber per day for adults.
+        <sup>2</sup> Reynolds et al., <em>Carbohydrate quality and human health</em>, The Lancet, 2019: highest vs. lowest fiber intakes across 185 studies and 58 trials.
+        Food values are approximate. Fibra Pop is a tasty way to add fiber, not a medicine. Enjoy it as part of a varied, balanced diet.
+      </p>
+    </section>
+
+    <!-- ============ FLAVORS (horizontal) ============ -->
+    <section class="flavors" id="flavors">
+      <div class="flavors-head">
+        <p class="eyebrow px">[ 03 ] The flavors</p>
+        <h2 class="section-title"><span class="px">Six</span> <span class="script">flavors</span></h2>
+      </div>
+      <div class="flavors-pin" id="flavorsPin">
+        <div class="flavors-progress" id="flavorsProgress" aria-hidden="true"></div>
+        <div class="flavors-track" id="flavorsTrack"></div>
+      </div>
+    </section>
+
+    <!-- ============ STITCH GAME ============ -->
+    <section class="stitch" id="stitch">
+      <div class="stitch-copy">
+        <p class="eyebrow px">[ 04 ] Play</p>
+        <h2 class="section-title"><span class="px">Stitch</span> <span class="script">a fruit</span></h2>
+        <p class="stitch-lead">Move your cursor (or drag your finger) over the dots in the hoop to sew the pattern. Finish it and you get a little something.</p>
+        <div class="stitch-picker" id="stitchPicker" role="radiogroup" aria-label="Pick a fruit to stitch"></div>
+        <div class="stitch-meter">
+          <div class="stitch-bar"><span id="stitchBar"></span></div>
+          <span class="px" id="stitchPct">000%</span>
+        </div>
+        <button class="btn btn--ghost" id="stitchReset">Unpick &amp; restart</button>
+      </div>
+      <div class="stitch-hoop">
+        <div class="stitch-fabric">
+        <canvas id="stitchCanvas" aria-label="Stitching canvas. Drag to reveal the fruit."></canvas>
+        <div class="stitch-hint" id="stitchHint" aria-hidden="true">
+          <span class="needle">✕</span>
+          <span class="px">Move over the dots to stitch</span>
+        </div>
+        </div>
+        <img class="stitch-ring" src="assets/hoop.webp" alt="">
+        <div class="stitch-reward" id="stitchReward" hidden>
+          <p class="script">Beautifully done.</p>
+          <p class="px">10% off your first box</p>
+          <button class="code px" id="stitchCode">STITCH10 <small>copy</small></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUILD A BOX ============ -->
+    <section class="box" id="box">
+      <div class="box-head">
+        <p class="eyebrow px">[ 05 ] Shop</p>
+        <h2 class="section-title"><span class="script">Build</span> <span class="px">your box</span></h2>
+        <p class="box-lead">Six cans, mixed however you like, for €15. Tap a can in the crate to take it out.</p>
+      </div>
+
+      <div class="box-layout">
+        <ul class="box-list" id="boxList"></ul>
+
+        <aside class="box-crate">
+          <div class="crate" id="crate" aria-live="polite"></div>
+          <div class="crate-foot">
+            <div>
+              <span class="px crate-count" id="crateCount">0 / 6</span>
+              <span class="crate-price" id="cratePrice">€0.00</span>
+            </div>
+            <div class="crate-actions">
+              <button class="btn btn--ghost" id="crateSurprise">Surprise me</button>
+              <button class="btn" id="crateCheckout" disabled>Checkout</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <form class="newsletter" id="newsletter">
+        <label for="email" class="px">Join the stitch club</label>
+        <p>New pairings, first sips, no spam.</p>
+        <div class="newsletter-row">
+          <input id="email" type="email" placeholder="your@email.com" required autocomplete="email">
+          <button class="btn btn--cream" type="submit">Sign up</button>
+        </div>
+      </form>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#flavors">Flavors</a>
+        <a href="#fiber">Why fiber</a>
+        <a href="#gap">Your inner garden</a>
+        <a href="#stitch">Stitch a fruit</a>
+        <a href="#box">Build a box</a>
+      </nav>
+    </div>
+    <div class="footer-word" id="footerWord" aria-hidden="true">
+      <span class="fw-px" id="fwPx"></span><span class="fw-script script">Pop</span>
+    </div>
+    <div class="footer-bottom px">
+      <span>© 2026 Fibra Pop</span>
+      <span>Soda with a little more substance</span>
+    </div>
+  </footer>
+
+  <!-- ============ LABEL DIALOG ============ -->
+  <dialog class="label" id="labelDialog">
+    <button class="label-close px" id="labelClose" aria-label="Close">✕</button>
+    <div class="label-body" id="labelBody"></div>
+  </dialog>
+
+  <div class="toast px" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/patterns.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
